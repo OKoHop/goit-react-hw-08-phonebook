@@ -24,7 +24,11 @@ export const Login = () => {
           </StyledLabel>
           <StyledLabel>
             Password
-            <Field name="password" placeholder="Enter password" />
+            <Field
+              type="password"
+              name="password"
+              placeholder="Enter password"
+            />
           </StyledLabel>
           <StyledBtn type="submit">LogIn</StyledBtn>
           <Toaster />

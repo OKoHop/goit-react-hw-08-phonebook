@@ -28,7 +28,7 @@ export const Register = () => {
           </StyledLabel>
           <StyledLabel>
             Password
-            <Field name="password" />
+            <Field type="password" name="password" />
           </StyledLabel>
           <button type="submit">Register</button>
           <Toaster />
