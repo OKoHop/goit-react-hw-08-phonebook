@@ -1,4 +1,4 @@
-import { logIn, logOut, register } from "./authOperations";
+import { logIn, logOut, refreshPage, register } from "./authOperations";
 import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
@@ -26,6 +26,9 @@ const authSlice = createSlice(
                 state.user = initialState.user;
                 state.token = null;
                 state.isLogged = false;
+            }).addCase(refreshPage.fulfilled, (state, action) => {
+                state.user = action.payload;
+                state.isLogged = true;
             })
         }
     }

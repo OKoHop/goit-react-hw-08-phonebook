@@ -4,8 +4,17 @@ import { Phonebook } from 'pages/PhoneBook/PhoneBook';
 import { Register } from 'pages/Registration/Registrater';
 import { Route, Routes } from 'react-router-dom';
 import { AppBar } from '../pages/AppBar/AppBar';
+import { useDispatch } from 'react-redux';
+import { useEffect } from 'react';
+import { refreshPage } from 'redux/auth/authOperations';
 
 export const App = () => {
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(refreshPage());
+  }, [dispatch]);
+
   return (
     <>
       <AppBar />

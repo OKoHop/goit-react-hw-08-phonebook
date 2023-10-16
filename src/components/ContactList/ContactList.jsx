@@ -25,7 +25,7 @@ export const ContactList = ({ title }) => {
           return (
             <StyledLi key={contact.id}>
               <p>{contact.name}</p>
-              <p>{contact.phone}</p>
+              <p>{contact.number}</p>
               <StyledButton
                 type="button"
                 onClick={() => dispatch(deleteContact(contact.id))}

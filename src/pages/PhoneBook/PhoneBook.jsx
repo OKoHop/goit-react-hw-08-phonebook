@@ -15,12 +15,14 @@ export const Phonebook = () => {
   }, [dispatch]);
 
   return (
-    <StyledDiv>
-      <h2>Phonebook</h2>
-      <AddContact />
-      <Filter />
-      <ContactList title="Contacts" />
-      <GlobalStyle />
-    </StyledDiv>
+    <main>
+      <StyledDiv>
+        <h2>Phonebook</h2>
+        <AddContact />
+        <Filter />
+        <ContactList title="Contacts" />
+        <GlobalStyle />
+      </StyledDiv>
+    </main>
   );
 };

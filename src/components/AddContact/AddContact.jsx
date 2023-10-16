@@ -15,7 +15,7 @@ const addContactSchema = Yup.object().shape({
     .min(3, 'Too Short!')
     .max(50, 'Too Long!')
     .required('Required'),
-  phone: Yup.number().min(10, 'Too Short!').required('Required'),
+  number: Yup.number().min(10, 'Too Short!').required('Required'),
 });
 
 export const AddContact = () => {
@@ -30,6 +30,7 @@ export const AddContact = () => {
           number: '',
         }}
         onSubmit={(values, actions) => {
+          console.log(values);
           if (
             nameContacts.find(
               contact =>
@@ -39,7 +40,6 @@ export const AddContact = () => {
             console.log(`err`);
             return alert(`${values.name} is already in contact!`);
           }
-          console.log(values);
           dispatch(addContact(values));
           actions.resetForm();
         }}
@@ -48,16 +48,12 @@ export const AddContact = () => {
         <StyledForm>
           <StyledLabel>
             Name
-            <StyledField name="name" placeholder="Enter name"></StyledField>
+            <StyledField name="name" placeholder="Enter name" />
             <ErrorMessage name="name" />
           </StyledLabel>
           <StyledLabel>
             Phone
-            <StyledField
-              name="number"
-              placeholder="0631234567"
-              type="phone"
-            ></StyledField>
+            <StyledField name="number" placeholder="0631234567" />
             <ErrorMessage name="number" />
           </StyledLabel>
           <StyledButton type="submit">Add contact</StyledButton>

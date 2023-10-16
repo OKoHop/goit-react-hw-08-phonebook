@@ -23,7 +23,7 @@ export const StyledButton = styled.button`
     border-radius: 5px;
 
     &:hover {
-        backround-color: teal;
+        background-color: teal;
     }
 
     &:focus {
