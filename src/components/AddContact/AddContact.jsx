@@ -27,7 +27,7 @@ export const AddContact = () => {
       <Formik
         initialValues={{
           name: '',
-          phone: '',
+          number: '',
         }}
         onSubmit={(values, actions) => {
           if (
@@ -36,9 +36,11 @@ export const AddContact = () => {
                 contact.name.toLowerCase() === values.name.toLowerCase()
             )
           ) {
+            console.log(`err`);
             return alert(`${values.name} is already in contact!`);
           }
-          dispatch(addContact({ ...values }));
+          console.log(values);
+          dispatch(addContact(values));
           actions.resetForm();
         }}
         validationSchema={addContactSchema}
@@ -52,7 +54,7 @@ export const AddContact = () => {
           <StyledLabel>
             Phone
             <StyledField
-              name="phone"
+              name="number"
               placeholder="0631234567"
               type="phone"
             ></StyledField>

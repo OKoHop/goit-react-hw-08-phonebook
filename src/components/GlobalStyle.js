@@ -17,11 +17,4 @@ h1, h2, h3, h4, h5, h5, p {
     padding: 0;
     margin: 0;
 }
-
-div {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-}
 `;

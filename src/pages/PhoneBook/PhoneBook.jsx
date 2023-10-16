@@ -5,6 +5,7 @@ import { GlobalStyle } from 'components/GlobalStyle';
 import { useDispatch } from 'react-redux';
 import { useEffect } from 'react';
 import { fetchContacts } from 'redux/phonebook/operations';
+import { StyledDiv } from './Phonebook.styled';
 
 export const Phonebook = () => {
   const dispatch = useDispatch();
@@ -14,12 +15,12 @@ export const Phonebook = () => {
   }, [dispatch]);
 
   return (
-    <div>
+    <StyledDiv>
       <h2>Phonebook</h2>
       <AddContact />
       <Filter />
       <ContactList title="Contacts" />
       <GlobalStyle />
-    </div>
+    </StyledDiv>
   );
 };

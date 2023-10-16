@@ -21,6 +21,14 @@ export const StyledButton = styled.button`
     background-color: inherit;
     border: 1px solid black;
     border-radius: 5px;
+
+    &:hover {
+        backround-color: teal;
+    }
+
+    &:focus {
+        background-color: tomato;
+    }
 `
 
 export const StyledLabel = styled.label`
