@@ -1,7 +1,8 @@
 import { Formik, Field } from 'formik';
 import { useDispatch } from 'react-redux';
 import { register } from 'redux/auth/authOperations';
-import { StyledForm } from './Register.styled';
+import { StyledForm, StyledLabel } from './Register.styled';
+import { Toaster } from 'react-hot-toast';
 
 export const Register = () => {
   const dispatch = useDispatch();
@@ -17,19 +18,20 @@ export const Register = () => {
         }}
       >
         <StyledForm>
-          <label>
+          <StyledLabel>
             UserName
             <Field name="name" />
-          </label>
-          <label>
+          </StyledLabel>
+          <StyledLabel>
             Email
             <Field type="email" name="email" />
-          </label>
-          <label>
+          </StyledLabel>
+          <StyledLabel>
             Password
             <Field name="password" />
-          </label>
+          </StyledLabel>
           <button type="submit">Register</button>
+          <Toaster />
         </StyledForm>
       </Formik>
     </main>

@@ -1,7 +1,8 @@
 import { Field, Formik } from 'formik';
 import { useDispatch } from 'react-redux';
+import { Toaster } from 'react-hot-toast';
 import { logIn } from 'redux/auth/authOperations';
-import { StyledForm } from './Login.styled';
+import { StyledBtn, StyledForm, StyledLabel } from './Login.styled';
 
 export const Login = () => {
   const dispatch = useDispatch();
@@ -17,15 +18,16 @@ export const Login = () => {
         }}
       >
         <StyledForm>
-          <label>
+          <StyledLabel>
             Email
             <Field type="email" name="email" placeholder="Enter email" />
-          </label>
-          <label>
+          </StyledLabel>
+          <StyledLabel>
             Password
             <Field name="password" placeholder="Enter password" />
-          </label>
-          <button type="submit">LogIn</button>
+          </StyledLabel>
+          <StyledBtn type="submit">LogIn</StyledBtn>
+          <Toaster />
         </StyledForm>
       </Formik>
     </main>
