@@ -1,9 +1,9 @@
 import { Home } from 'pages/HomePage/Home';
 import { Login } from 'pages/Login/Login';
 import { Phonebook } from 'pages/PhoneBook/PhoneBook';
-import { Register } from 'pages/Register/Registrater';
+import { Register } from 'pages/Registration/Registrater';
 import { Route, Routes } from 'react-router-dom';
-import { AppBar } from './AppBar/AppBar';
+import { AppBar } from '../pages/AppBar/AppBar';
 
 export const App = () => {
   return (

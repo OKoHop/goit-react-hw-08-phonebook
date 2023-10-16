@@ -1,6 +1,7 @@
-import { Formik, Form, Field } from 'formik';
+import { Formik, Field } from 'formik';
 import { useDispatch } from 'react-redux';
 import { register } from 'redux/auth/authOperations';
+import { StyledForm } from './Register.styled';
 
 export const Register = () => {
   const dispatch = useDispatch();
@@ -14,7 +15,7 @@ export const Register = () => {
         actions.resetForm();
       }}
     >
-      <Form>
+      <StyledForm>
         <label>
           UserName
           <Field name="name" />
@@ -28,7 +29,7 @@ export const Register = () => {
           <Field name="password" />
         </label>
         <button type="submit">Register</button>
-      </Form>
+      </StyledForm>
     </Formik>
   );
 };

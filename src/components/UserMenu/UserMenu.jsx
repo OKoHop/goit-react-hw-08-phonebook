@@ -3,17 +3,16 @@ import { logOut } from 'redux/auth/authOperations';
 
 export const UserMenu = () => {
   const userName = useSelector(state => state.auth.user.name);
-  const userToken = useSelector(state => state.auth.token);
   const dispatch = useDispatch();
 
-  const handleClick = userToken => {
-    dispatch(logOut(userToken));
+  const handleClick = () => {
+    dispatch(logOut());
   };
 
   return (
     <>
       <p>Welcome, {userName}</p>
-      <button onClick={() => handleClick(userToken)}>LogOut</button>
+      <button onClick={() => handleClick()}>LogOut</button>
     </>
   );
 };
