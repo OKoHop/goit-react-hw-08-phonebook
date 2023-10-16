@@ -1,25 +1,21 @@
-import { ContactList } from 'components/ContactList/ContactList';
-import { AddContact } from 'components/AddContact/AddContact';
-import { Filter } from 'components/FilterContacts/FilterContacts';
-import { GlobalStyle } from 'components/GlobalStyle';
-import { useDispatch } from 'react-redux';
-import { useEffect } from 'react';
-import { fetchContacts } from 'redux/operations';
+import { Home } from 'pages/HomePage/Home';
+import { Login } from 'pages/Login/Login';
+import { Phonebook } from 'pages/PhoneBook/PhoneBook';
+import { Register } from 'pages/Register/Register';
+import { Route, Routes } from 'react-router-dom';
+import { AppBar } from './AppBar/AppBar';
 
 export const App = () => {
-  const dispatch = useDispatch();
-
-  useEffect(() => {
-    dispatch(fetchContacts());
-  }, [dispatch]);
-
   return (
-    <div>
-      <h2>Phonebook</h2>
-      <AddContact />
-      <Filter />
-      <ContactList title="Contacts" />
-      <GlobalStyle />
-    </div>
+    <>
+      <AppBar />
+
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/phonebook" element={<Phonebook />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/register" element={<Register />} />
+      </Routes>
+    </>
   );
 };

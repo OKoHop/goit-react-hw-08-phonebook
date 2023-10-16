@@ -5,7 +5,7 @@ import {
   StyledUl,
   StyledButton,
 } from 'components/ContactList/ContactList.style';
-import { deleteContact } from 'redux/operations';
+import { deleteContact } from 'redux/phonebook/operations';
 
 export const ContactList = ({ title }) => {
   const contacts = useSelector(state => state.contacts.contacts);
