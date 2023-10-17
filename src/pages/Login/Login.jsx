@@ -14,7 +14,6 @@ export const Login = () => {
         onSubmit={(values, action) => {
           console.log(values);
           dispatch(logIn(values));
-          action.resetForm();
         }}
       >
         <StyledForm>

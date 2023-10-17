@@ -9,6 +9,7 @@ import { useEffect } from 'react';
 import { refreshPage } from 'redux/auth/authOperations';
 import { PrivatRoute } from './Routes/PrivatRoutes';
 import { RestrictedRoute } from './Routes/RestrictedRoutes';
+import { NotFound } from './NotFound/NotFoud';
 
 export const App = () => {
   const dispatch = useDispatch();
@@ -41,6 +42,7 @@ export const App = () => {
             <RestrictedRoute redirectTo="/phonebook" component={<Register />} />
           }
         />
+        <Route path="*" element={<NotFound />} />
       </Routes>
     </>
   );

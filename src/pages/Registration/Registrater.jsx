@@ -14,7 +14,6 @@ export const Register = () => {
         onSubmit={(values, actions) => {
           console.log(values);
           dispatch(register(values));
-          actions.resetForm();
         }}
       >
         <StyledForm>

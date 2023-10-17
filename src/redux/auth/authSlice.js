@@ -9,7 +9,7 @@ const initialState = {
 };
 
 const notifyOk = () => toast.success('Done!');
-const notifyErr = () => toast.error('Incorrect email or password');
+const notifyErr = () => toast.error('Incorect email or password');
 
 const authSlice = createSlice(
     {
